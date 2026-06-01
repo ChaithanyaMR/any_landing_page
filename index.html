@@ -15,10 +15,8 @@
     
     /* Header Navbar Layout */
     .nav-wrapper { background: #ffffff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1000; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 96px; max-width: 1250px; margin: 0 auto; padding: 0 2rem; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; max-width: 1250px; margin: 0 auto; padding: 0 2rem; }
     .logo-link { display: flex; align-items: center; text-decoration: none; }
-    
-    /* Significantly Scaled Up Logo */
     .logo-img { height: 90px; width: auto; object-fit: contain; display: block; }
     
     .nav-links { display: flex; gap: 3rem; align-items: center; }
@@ -28,7 +26,7 @@
     .btn-nav:hover { background: #e56000; transform: translateY(-1px); }
 
     /* Balanced Hero Section */
-    .hero { background: linear-gradient(180deg, #fffcfb 0%, #ffffff 100%); border-bottom: 1px solid #f0f0f0; padding: 4.5rem 0; overflow: hidden; }
+    .hero { background: linear-gradient(180deg, #fffcfb 0%, #ffffff 100%); border-bottom: 1px solid #f0f0f0; padding: 2.5rem 0 4.5rem 0; overflow: hidden; }
     .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
     .hero-left { padding-right: 1rem; }
     .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: #fff3ed; color: #FF6B00; font-size: 0.85rem; font-weight: 700; padding: 0.4rem 1rem; border-radius: 999px; border: 1px solid #ffd9c2; margin-bottom: 1.25rem; }
@@ -42,7 +40,7 @@
     .btn-secondary { background: #ffffff; color: #111111; padding: 1rem 2.25rem; border-radius: 999px; font-size: 1rem; font-weight: 700; border: 1.5px solid #e2e8f0; cursor: pointer; transition: all 0.2s; text-decoration: none; }
     .btn-secondary:hover { border-color: #111111; background: #fafafa; transform: translateY(-2px); }
 
-    /* Perfectly Weighted Hero Mockup Frame */
+    /* Hero Mockup Frame */
     .hero-right { display: flex; justify-content: center; align-items: center; }
     .hero-mockup-container { width: 100%; max-width: 380px; position: relative; }
     .hero-img { width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08)); }
@@ -55,19 +53,18 @@
 
     /* Infinite Scrolling Marquee Track */
     .marquee-container { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; overflow: hidden; padding: 1.5rem 0; }
-    .marquee-track { display: flex; gap: 2.5rem; width: max-content; animation: scrollMarquee 40s linear infinite; }
-    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-track-left { display: flex; gap: 2.5rem; width: max-content; animation: scrollLeft 40s linear infinite; }
+    .marquee-track-left:hover { animation-play-state: paused; }
 
-    @keyframes scrollMarquee {
+    @keyframes scrollLeft {
       0% { transform: translateX(0); }
       100% { transform: translateX(calc(-50% - 1.25rem)); }
     }
     
-    /* High Fidelity, Colorful Service Cards */
+    /* Service Cards */
     .service-card { border-radius: 32px; padding: 2.5rem 2.5rem 0 2.5rem; width: 440px; display: flex; flex-direction: column; justify-content: space-between; min-height: 560px; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease; flex-shrink: 0; overflow: hidden; border: 1px solid rgba(0,0,0,0.04); }
     .service-card:hover { transform: translateY(-8px); box-shadow: 0 24px 45px rgba(0,0,0,0.09); }
     
-    /* Service Specifc Gradient Layout Templates */
     .card-wecare { background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); }
     .card-freshmart { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
     .card-quickbites { background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%); }
@@ -84,7 +81,6 @@
     .tag-packit { color: #1e40af; }
     .tag-taskpal { color: #9a3412; }
 
-    /* Responsive, Large Image Mockup Container */
     .card-mockup-wrapper { width: 100%; display: flex; justify-content: center; align-items: flex-end; margin-top: 2rem; height: 310px; overflow: hidden; position: relative; }
     .card-asset { width: 90%; height: auto; max-height: 100%; object-fit: contain; display: block; border-radius: 16px 16px 0 0; filter: drop-shadow(0 12px 24px rgba(0,0,0,0.08)); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
     .service-card:hover .card-asset { transform: scale(1.05) translateY(-4px); }
@@ -100,6 +96,21 @@
     .ux-icon-box { background: #fff3ed; width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #FF6B00; flex-shrink: 0; }
     .ux-feature-text h4 { font-size: 1.15rem; font-weight: 700; color: #111111; margin-bottom: 0.35rem; }
     .ux-feature-text p { font-size: 0.95rem; color: #555555; line-height: 1.6; }
+
+    /* Premium Human Perspectives Editorial Layout CSS */
+    .editorial-section { padding: 7rem 0; background: #ffffff; border-bottom: 1px solid #f0f0f0; }
+    .editorial-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 4rem; align-items: start; }
+    .editorial-sticky-sidebar { position: sticky; top: 120px; }
+    .editorial-sticky-sidebar .section-title { text-align: left; font-size: 2.8rem; line-height: 1.1; margin-bottom: 1.5rem; }
+    .editorial-sub-text { color: #666666; font-size: 1.05rem; line-height: 1.6; max-width: 360px; }
+    .editorial-stack { display: flex; flex-direction: column; gap: 4.5rem; }
+    .voice-card { background: #fafafa; border-radius: 24px; padding: 3rem; border: 1px solid #f0f0f0; position: relative; }
+    .quote-mark { font-size: 5rem; color: #FF6B00; opacity: 0.1; position: absolute; top: 1rem; right: 2rem; font-family: serif; line-height: 1; }
+    .voice-body-text { font-size: 1.15rem; line-height: 1.7; color: #222222; font-weight: 400; margin-bottom: 2rem; letter-spacing: -0.2px; }
+    .voice-profile-footer { display: flex; align-items: center; gap: 1rem; border-top: 1px solid #eeeeee; padding-top: 1.5rem; }
+    .voice-avatar { width: 44px; height: 44px; background: #fff3ed; color: #FF6B00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .voice-author-name { font-size: 1rem; font-weight: 700; color: #111111; }
+    .voice-author-meta { font-size: 0.85rem; color: #666666; margin-top: 0.1rem; }
 
     /* Waitlist Section */
     .waitlist-section { padding: 6rem 0; background: #111111; color: #ffffff; text-align: center; }
@@ -117,20 +128,21 @@
     .form-feedback { font-size: 0.95rem; margin-top: 0.75rem; display: none; }
     .form-feedback.success { color: #4caf50; display: block; }
     .form-feedback.error { color: #f44336; display: block; }
-    
-    .waitlist-counter { font-size: 0.9rem; color: #666666; margin-top: 1.25rem; display: block; letter-spacing: 0.5px; }
-    .waitlist-counter span { color: #FF6B00; font-weight: 700; }
 
-    /* Expanded Footer Styling */
-    .footer { background: #ffffff; padding: 4.5rem 0; border-top: 1px solid #f0f0f0; }
-    .footer-grid { display: flex; justify-content: space-between; align-items: center; }
-    .footer-brand { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-brand .logo-img { height: 85px; width: auto; }
-    .footer-brand p { font-size: 0.95rem; color: #666666; }
+    /* Cleaned Up & Tightened Footer Layout */
+    .footer { background: #ffffff; padding: 4rem 0 3rem 0; border-top: 1px solid #f0f0f0; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: start; }
+    .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; text-align: left; }
+    
+    /* Big Headline Subtitle Style */
+    .footer-punchline { font-size: 2.3rem; font-weight: 800; letter-spacing: -1.2px; color: #111111; line-height: 1.15; margin-top: 0.25rem; }
+    .footer-brand p { font-size: 1.05rem; color: #555555; line-height: 1.4; }
+    
+    .footer-links-wrapper { display: flex; justify-content: flex-end; width: 100%; }
     .footer-links { display: flex; gap: 2.5rem; }
-    .footer-links a { font-size: 0.95rem; color: #555555; text-decoration: none; font-weight: 600; }
+    .footer-links a { font-size: 0.95rem; color: #555555; text-decoration: none; font-weight: 600; transition: color 0.2s; }
     .footer-links a:hover { color: #FF6B00; }
-    .footer-copyright { border-top: 1px solid #f5f5f5; padding-top: 2rem; margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999999; }
+    .footer-copyright { border-top: 1px solid #f5f5f5; padding-top: 2rem; margin-top: 3.5rem; text-align: center; font-size: 0.85rem; color: #999999; }
 
     /* Toast Notification */
     .toast { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background: #111111; color: #ffffff; padding: 1.25rem 2.5rem; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.75rem; z-index: 10000; transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -141,9 +153,8 @@
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1); }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
-    /* Advanced Responsive Overrides (Phones and Tablets Models) */
+    /* Responsive Overrides */
     @media (max-width: 1024px) {
-      .marquee-container { padding: 1rem 0; }
       .service-card { width: 380px; min-height: 500px; padding: 2rem 2rem 0 2rem; }
       .card-mockup-wrapper { height: 260px; }
     }
@@ -156,8 +167,21 @@
       .hero-sub, .hero-ctas { margin-left: auto; margin-right: auto; justify-content: center; }
       .hero-right { justify-content: center; }
       .hero-mockup-container { max-width: 320px; }
-      .footer-grid { flex-direction: column; gap: 2rem; text-align: center; }
-      .footer-brand { align-items: center; }
+      
+      /* Footer Grid System Updates */
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .footer-brand { align-items: center; text-align: center; gap: 1rem; }
+      .footer-punchline { font-size: 1.9rem; }
+      .footer-links-wrapper { justify-content: center; }
+
+      /* Editorial Perspective Section Responsive System */
+      .editorial-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .editorial-sticky-sidebar { position: static; text-align: center; }
+      .editorial-sticky-sidebar .section-title { text-align: center; font-size: 2.2rem; }
+      .editorial-sub-text { margin: 0 auto; max-width: 100%; }
+      .editorial-stack { gap: 2.5rem; }
+      .voice-card { padding: 2rem; }
+      .voice-body-text { font-size: 1.05rem; }
     }
 
     @media (max-width: 480px) {
@@ -169,6 +193,8 @@
       .waitlist-form { border-radius: 24px; flex-direction: column; padding: 0.75rem; background: rgba(255,255,255,0.04); }
       .waitlist-input { padding: 0.85rem; text-align: center; }
       .btn-submit { width: 100%; padding: 0.85rem; border-radius: 18px; }
+      .footer-punchline { font-size: 1.6rem; }
+      .footer-links { flex-direction: column; gap: 1.25rem; }
     }
   </style>
 </head>
@@ -183,6 +209,7 @@
       <nav class="nav-links">
         <a href="#services">Our Services</a>
         <a href="#walkthrough">How It Works</a>
+        <a href="#voices">Voices</a>
       </nav>
       <a href="#waitlist" class="btn-nav">Join Waitlist</a>
     </div>
@@ -198,19 +225,19 @@
           <p class="hero-sub">From local grocery delivery and hot meals to trusted home healthcare and daily household tasks—we are bringing essential services together to make local life easier.</p>
           <div class="hero-ctas">
             <a href="#waitlist" class="btn-primary">Request Early Access</a>
-            <a href="#services" class="btn-secondary">Explore Layout</a>
+            <a href="#services" class="btn-secondary">Explore More</a>
           </div>
         </div>
         <div class="hero-right">
           <div class="hero-mockup-container">
-            <img src="any_mainscreen.jpg" alt="ANY App Interface" class="hero-img">
+            <img src="any_main_screen.png" alt="ANY App Interface" class="hero-img">
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Auto-Scrolling Marquee Track Section -->
+  <!-- Services Marquee Section -->
   <section id="services" style="padding: 5rem 0 3rem 0; background: #ffffff; border-bottom: 1px solid #f0f0f0;">
     <div class="container">
       <div class="section-header reveal">
@@ -220,9 +247,8 @@
       </div>
     </div>
 
-    <!-- Infinite Marquee Track Container -->
     <div class="marquee-container">
-      <div class="marquee-track" id="marqueeTrack">
+      <div class="marquee-track-left" id="serviceTrack">
         
         <!-- WeCare Card -->
         <div class="service-card card-wecare">
@@ -321,19 +347,110 @@
     </div>
   </section>
 
+  <!-- Premium Human Perspectives Section (Editorial Stack Layout) -->
+  <section id="voices" class="editorial-section">
+    <div class="container">
+      <div class="editorial-grid">
+        
+        <!-- Left Side: Sticky Section Branding Header -->
+        <div class="editorial-sticky-sidebar">
+          <span class="eyebrow">Human Perspectives</span>
+          <h2 class="section-title">Why real accessibility matters</h2>
+          <p class="editorial-sub-text">
+            Real reflections on logistical gaps, daily transactional hurdles, and the true meaning of community inclusion across regional panchayats.
+          </p>
+        </div>
+
+        <!-- Right Side: The Clean Vertical Story Stack -->
+        <div class="editorial-stack">
+          
+          <!-- Voice 1: Arya (The Human Core) -->
+          <div class="reveal voice-card">
+            <div class="quote-mark">“</div>
+            <p class="voice-body-text">
+              "Most of the time, my daily life depends on others. Whether it’s buying something or traveling somewhere, I often have to rely on someone to help me.<br><br>
+              As a B.Ed graduate, I need to buy books, materials, and other essentials. But arranging everything or going out to get them takes a lot of time… and it’s not always easy. Sometimes, it feels inconvenient and time-consuming.<br><br>
+              But I often think… what if there was a simple solution? Something that could help me buy what I need or travel where I want—quickly and easily, <strong>without depending on others</strong>.<br><br>
+              If something like that becomes available, it could save so much time and make life a lot easier for people like me. And I truly feel… it would be really beneficial for all of us."
+            </p>
+            <div class="voice-profile-footer">
+              <div class="voice-avatar">A</div>
+              <div>
+                <h4 class="voice-author-name">Arya</h4>
+                <p class="voice-author-meta">B.Ed Graduate • Pallikkara Panchayat Resident</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Voice 2: Nilima (The Global Market Gap) -->
+          <div class="reveal voice-card">
+            <div class="quote-mark">“</div>
+            <p class="voice-body-text">
+              "During my visits to Kerala, I found it surprisingly difficult to access and coordinate everyday services that are readily available through centralized digital platforms in the United States. Tasks such as arranging online grocery delivery, accessing medical services, booking household assistance, and finding reliable service providers often required significant effort and research.<br><br>
+              As someone who has experienced the convenience of integrated digital services in the U.S., I see a tremendous opportunity for Kerala to further embrace this level of accessibility and convenience... <strong>A unified platform could greatly improve convenience, efficiency, and quality of life</strong> for residents and visitors alike. My experiences highlighted a clear gap in the market."
+            </p>
+            <div class="voice-profile-footer">
+              <div class="voice-avatar">N</div>
+              <div>
+                <h4 class="voice-author-name">Nilima</h4>
+                <p class="voice-author-meta">Charlotte, North Carolina • International Visitor Perspective</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Voice 3: Deepika (The Inclusion Vision) -->
+          <div class="reveal voice-card">
+            <div class="quote-mark">“</div>
+            <p class="voice-body-text">
+              "Living in a rural area has made me realize how difficult it can be to access even the most basic services. Something as simple as buying groceries, medicines, or household essentials often requires traveling long distances. In many cases, people have to walk several kilometers just to reach the nearest shop.<br><br>
+              The situation becomes even more challenging for elderly residents, women, students, and families who may not have easy access to transportation... Many people simply accept these difficulties as part of daily life because there are very few alternatives available.<br><br>
+              By bringing multiple services together on a single platform, ANY has the potential to connect people seamlessly. For communities like Kumbadaje, <strong>this is not just about convenience—it is about accessibility, inclusion, and improving quality of life</strong>."
+            </p>
+            <div class="voice-profile-footer">
+              <div class="voice-avatar">D</div>
+              <div>
+                <h4 class="voice-author-name">Deepika</h4>
+                <p class="voice-author-meta">M.Sc. Microbiology • Kumbadaje Panchayat Resident</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Voice 4: Jijila G (The Professional & Fragmented Infrastructure Gap) -->
+          <div class="reveal voice-card">
+            <div class="quote-mark">“</div>
+            <p class="voice-body-text">
+              "Although I do not live in a completely remote area, accessing everyday services is still challenging. Food from nearby hotels is sometimes delivered through informal arrangements or unauthorized individuals, but there is no reliable system that people can consistently depend on.<br><br>
+              The problem extends beyond food delivery. There is no single platform where residents can access essential services such as transportation, healthcare assistance, home services, grocery delivery, or trusted local providers. Most tasks require multiple phone calls, personal contacts, and unnecessary coordination.<br><br>
+              As a working professional, I often find that simple daily needs consume more time and effort than they should. What should be a quick task can become a time-consuming process because services are fragmented and difficult to access.<br><br>
+              I believe a platform like ANY could make a meaningful difference by bringing trusted local services together in one place. Instead of relying on informal arrangements or searching for individual providers, people could access the services they need through a single, reliable platform.<br><br>
+              For communities like Uduma, this is not just about convenience. <strong>It is about creating a dependable system that saves time, improves accessibility, and makes everyday life easier for everyone.</strong>"
+            </p>
+            <div class="voice-profile-footer">
+              <div class="voice-avatar">J</div>
+              <div>
+                <h4 class="voice-author-name">Jijila G.</h4>
+                <p class="voice-author-meta">Special Educator • Uduma Panchayat Resident</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Waitlist Section -->
   <section id="waitlist" class="waitlist-section">
     <div class="waitlist-container reveal">
       <h2>Join the Waitlist</h2>
       <p>Be among the first families in your community to access the platform when we launch services in your area.</p>
       
-      <form class="waitlist-form" id="secureWaitlistForm" onsubmit="handleWaitlistSubmit(event)">
-        <input type="email" id="waitlistEmail" class="waitlist-input" placeholder="Enter your email address" required aria-label="Email address for waitlist">
+      <form class="waitlist-form" id="secureWaitlistForm" action="https://formspree.io/f/xbdbvkao" method="POST" onsubmit="handleWaitlistSubmit(event)">
+        <input type="email" name="email" id="waitlistEmail" class="waitlist-input" placeholder="Enter your email address" required aria-label="Email address for waitlist">
         <button type="submit" class="btn-submit">Submit</button>
       </form>
       
       <div id="formFeedback" class="form-feedback"></div>
-      <small class="waitlist-counter">Currently tracking <span id="counterValue">0</span> interested local submissions</small>
     </div>
   </section>
 
@@ -343,13 +460,17 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="logo.png" alt="ANY Logo" class="logo-img">
+          <h2 class="footer-punchline">Because ANY means never facing it alone.</h2>
           <p>Bringing everyday community services right to your phone.</p>
         </div>
-        <nav class="footer-links">
-          <a href="#services">Our Services</a>
-          <a href="#walkthrough">How It Works</a>
-          <a href="#waitlist">Waitlist Queue</a>
-        </nav>
+        <div class="footer-links-wrapper">
+          <nav class="footer-links">
+            <a href="#services">Our Services</a>
+            <a href="#walkthrough">How It Works</a>
+            <a href="#voices">Voices</a>
+            <a href="#waitlist">Waitlist Queue</a>
+          </nav>
+        </div>
       </div>
       <div class="footer-copyright">
         &copy; 2026 ANY Platform. All rights reserved.
@@ -363,58 +484,66 @@
   </div>
 
   <script>
-    // Clone marquee elements for infinite loops
-    const track = document.getElementById('marqueeTrack');
-    const cards = Array.from(track.children);
-    cards.forEach(card => {
-      const clone = card.cloneNode(true);
-      track.appendChild(clone);
-    });
-
-    // Tracking client storage metrics locally
-    function initWaitlistCounter() {
-      let savedData = localStorage.getItem('any_waitlist_emails');
-      let emailArray = savedData ? JSON.parse(savedData) : [];
-      document.getElementById('counterValue').innerText = emailArray.length;
+    function setupMarqueeLoop(trackId) {
+      const track = document.getElementById(trackId);
+      if (!track) return;
+      const cards = Array.from(track.children);
+      cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+      });
     }
 
-    function handleWaitlistSubmit(event) {
+    setupMarqueeLoop('serviceTrack');
+
+    async function handleWaitlistSubmit(event) {
       event.preventDefault();
+      
+      const form = event.target;
       const emailInput = document.getElementById('waitlistEmail');
       const feedback = document.getElementById('formFeedback');
       const toast = document.getElementById('successToast');
-      const email = emailInput.value.trim();
+      const button = form.querySelector('.btn-submit');
 
-      if (!email) return;
+      button.innerText = "Sending...";
+      button.disabled = true;
+
+      const data = new FormData(form);
 
       try {
-        let savedData = localStorage.getItem('any_waitlist_emails');
-        let emailArray = savedData ? JSON.parse(savedData) : [];
-        
-        if (emailArray.includes(email)) {
-          feedback.className = "form-feedback error";
-          feedback.innerText = "This email is already registered.";
-          return;
-        }
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-        emailArray.push(email);
-        localStorage.setItem('any_waitlist_emails', JSON.stringify(emailArray));
-        
-        initWaitlistCounter();
-        feedback.className = "form-feedback";
-        feedback.innerText = "";
-        emailInput.value = "";
-        
-        toast.classList.add('show');
-        setTimeout(() => { toast.classList.remove('show'); }, 4000);
-        
-      } catch (e) {
+        if (response.ok) {
+          feedback.className = "form-feedback success";
+          feedback.innerText = "";
+          emailInput.value = "";
+          
+          toast.classList.add('show');
+          setTimeout(() => { toast.classList.remove('show'); }, 4000);
+        } else {
+          const responseData = await response.json();
+          feedback.className = "form-feedback error";
+          if (responseData.errors) {
+            feedback.innerText = responseData.errors.map(error => error.message).join(", ");
+          } else {
+            feedback.innerText = "Oops! There was a problem submitting your email.";
+          }
+        }
+      } catch (error) {
         feedback.className = "form-feedback error";
-        feedback.innerText = "An error occurred. Please try again.";
+        feedback.innerText = "Network error. Please check your connection and try again.";
+      } finally {
+        button.innerText = "Submit";
+        button.disabled = false;
       }
     }
 
-    // Intersection Observer Settings
     const observerOptions = { root: null, threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -425,7 +554,6 @@
     }, observerOptions);
 
     document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
-    document.addEventListener("DOMContentLoaded", initWaitlistCounter);
   </script>
 </body>
 </html>
