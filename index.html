@@ -327,20 +327,32 @@
           <p class="section-sub">We bring everything together seamlessly so any household member can access daily community transactions without stress.</p>
           
           <div class="ux-feature-list">
-            <div class="ux-feature-item">
-              <div class="ux-icon-box"><i class="ti ti-layout-grid"></i></div>
+            
+            <!-- Updated Feature 1: One-Touch Concierge / Call Service -->
+            <div class="ux-feature-item" style="display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 2rem;">
+              <!-- Changed icon to a phone/headset look to match the bottom nav call button style -->
+              <div class="ux-icon-box" style="background: #fff3ed; width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #FF6B00; flex-shrink: 0;">
+                <i class="ti ti-phone-call"></i>
+              </div>
               <div class="ux-feature-text">
-                <h4>Easy to Read and Use</h4>
-                <p>Clean text, recognizable cards, and clear workflows ensure effortless utility navigation across generations.</p>
+                <h4 style="font-size: 1.2rem; font-weight: 700; color: #111111; margin-bottom: 0.35rem;">One-Touch ANY Concierge</h4>
+                <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">
+                  Apps can feel overwhelming. If browsing or booking ever feels confusing, simply tap the central <strong>ANY Call Button</strong> to speak directly with a local guide who will handle your shops, orders, or bookings for you.
+                </p>
               </div>
             </div>
-            <div class="ux-feature-item">
-              <div class="ux-icon-box"><i class="ti ti-lock"></i></div>
+
+            <!-- Feature 2: Complete Privacy Controls -->
+            <div class="ux-feature-item" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+              <div class="ux-icon-box" style="background: #fff3ed; width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #FF6B00; flex-shrink: 0;">
+                <i class="ti ti-lock"></i>
+              </div>
               <div class="ux-feature-text">
                 <h4>Complete Privacy Controls</h4>
                 <p>Sensitive user controls are directly integrated right from installation to keep community interfaces safe.</p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -455,24 +467,45 @@
   </section>
 
   <!-- Footer Elements -->
-  <footer class="footer">
+  <!-- Cleaned Up & Perfectly Aligned Footer Layout -->
+  <footer class="footer" style="padding: 4rem 0 2rem 0; background-color: #ffffff;">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="logo.png" alt="ANY Logo" class="logo-img">
-          <h2 class="footer-punchline">Because ANY means never facing it alone.</h2>
-          <p>Bringing everyday community services right to your phone.</p>
+      
+      <!-- Flexbox layout prevents grid column cramping -->
+      <div class="footer-row" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; flex-wrap: wrap;">
+        
+        <!-- Left Side: Brand Punchline -->
+        <div class="footer-brand" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 0.75rem;">
+          <h2 class="footer-punchline" style="color: #FF6B00; font-size: 2.5rem; font-weight: 800; letter-spacing: -1.2px; line-height: 1.2; margin: 0;">
+            Because <span style="color: #111111;">ANY</span> means never facing it alone.
+          </h2>
+          <p style="font-size: 1.1rem; color: #555555; margin: 0; line-height: 1.4;">
+            Bringing everyday community services right to your phone.
+          </p>
         </div>
-        <div class="footer-links-wrapper">
-          <nav class="footer-links">
-            <a href="#services">Our Services</a>
-            <a href="#walkthrough">How It Works</a>
-            <a href="#voices">Voices</a>
-            <a href="#waitlist">Waitlist Queue</a>
+
+        <!-- Right Side: Stacking Logo and Nav links cleanly with exact alignments -->
+        <div class="footer-right-column" style="display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; min-width: max-content;">
+          
+          <!-- Explicitly sized, right-aligned brand logo -->
+          <a href="#home" style="display: block; margin: 0;">
+            <img src="logo.png" alt="ANY Logo" class="logo-img" style="height: 3.5rem; width: auto; display: block;">
+          </a>
+
+          <!-- Navigation Links in a clean horizontal row with fixed whitespace formatting -->
+          <nav class="footer-links" style="display: flex; gap: 2rem; align-items: center; white-space: nowrap; margin: 0;">
+            <a href="#services" style="text-decoration: none; color: #333333; font-weight: 500;">Our Services</a>
+            <a href="#walkthrough" style="text-decoration: none; color: #333333; font-weight: 500;">How It Works</a>
+            <a href="#voices" style="text-decoration: none; color: #333333; font-weight: 500;">Voices</a>
+            <a href="#waitlist" style="text-decoration: none; color: #333333; font-weight: 500;">Waitlist Queue</a>
           </nav>
+          
         </div>
+
       </div>
-      <div class="footer-copyright">
+
+      <!-- Copyright Section -->
+      <div class="footer-copyright" style="border-top: 1px solid #eeeeee; padding-top: 2rem; margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #888888;">
         &copy; 2026 ANY Platform. All rights reserved.
       </div>
     </div>
