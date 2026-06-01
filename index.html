@@ -24,6 +24,7 @@
       margin: 0;
       padding: 0;
       width: 100%;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased; 
     }
     
@@ -218,23 +219,47 @@
     .form-feedback.error { color: #f44336; display: block; }
 
     /* ==========================================
-       FOOTER
+       FOOTER SECTION (RE-ARCHITECTED FOR RESPONSIVENESS)
        ========================================== */
-    .footer { background: #ffffff; padding: 4rem 0 2rem 0; border-top: 1px solid #f0f0f0; }
-    .footer-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; flex-wrap: wrap; }
-    .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; text-align: left; flex: 1; min-width: 300px; }
-    .footer-punchline { font-size: 2.5rem; font-weight: 800; letter-spacing: -1.2px; color: #FF6B00; line-height: 1.2; margin: 0; }
+    .footer { background: #ffffff; padding: 4rem 0 2rem 0; border-top: 1px solid #f0f0f0; width: 100%; }
+    .footer-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; width: 100%; }
+    .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; text-align: left; flex: 1; }
+    .footer-punchline { font-size: 2.5rem; font-weight: 800; letter-spacing: -1.2px; color: #111111; line-height: 1.2; margin: 0; }
     .footer-brand p { font-size: 1.1rem; color: #555555; line-height: 1.4; margin: 0; }
     
-    .footer-right-column { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; min-width: max-content; }
-    .footer-links { display: flex; gap: 2rem; align-items: center; white-space: nowrap; margin: 0; }
-    .footer-links a { font-size: 1rem; color: #333333; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .footer-right-column { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; }
+    .footer-links { display: flex; gap: 2rem; align-items: center; margin: 0; padding: 0; list-style: none; }
+    .footer-links a { font-size: 1rem; color: #333333; text-decoration: none; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
     .footer-links a:hover { color: #FF6B00; }
-    .footer-copyright { border-top: 1px solid #eeeeee; padding-top: 2rem; margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #888888; }
+    .footer-copyright { border-top: 1px solid #eeeeee; padding-top: 2rem; margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #888888; width: 100%; }
 
-    /* Toast Notification */
-    .toast { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background: #111111; color: #ffffff; padding: 1.25rem 2.5rem; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.75rem; z-index: 10000; transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    .toast.show { bottom: 40px; }
+    /* Toast Notification Container */
+    .toast { 
+      position: fixed; 
+      bottom: 40px; 
+      left: 50%; 
+      transform: translate(-50%, 30px); 
+      background: #111111; 
+      color: #ffffff; 
+      padding: 1.25rem 2.5rem; 
+      border-radius: 16px; 
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+      font-weight: 600; 
+      font-size: 1rem; 
+      display: none; 
+      align-items: center; 
+      gap: 0.75rem; 
+      z-index: 10000; 
+      opacity: 0;
+      width: max-content;
+      max-width: 90vw;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .toast.show { 
+      display: flex !important; 
+      opacity: 1 !important;
+      transform: translate(-50%, 0) !important;
+    }
     .toast i { color: #4caf50; font-size: 1.25rem; }
 
     /* Scroll Reveal Animation Framework */
@@ -251,15 +276,14 @@
     }
 
     @media (max-width: 991px) {
-      .responsive-row,
-      .footer-row {
+      .responsive-row {
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
         gap: 3rem !important;
       }
 
-      /* Navigation Mobile Collapse Base Rules */
+      /* Navigation Mobile Collapse Rules */
       .nav-container { height: 75px; padding: 0 1.25rem; }
       .logo-img { height: 65px; }
       .nav-links { display: none; }
@@ -271,8 +295,7 @@
       .hero-sub, .hero-ctas { margin-left: auto; margin-right: auto; justify-content: center; }
       
       .walkthrough-left, .walkthrough-right,
-      .voices-text-block, .voices-carousel-container,
-      .footer-brand, .footer-right-column {
+      .voices-text-block, .voices-carousel-container {
         width: 100% !important;
         align-items: center !important;
         text-align: center !important;
@@ -281,8 +304,26 @@
       .voices-text-block p { margin: 0 auto 0 auto !important; }
       .ux-feature-item { flex-direction: column !important; align-items: center !important; text-align: center !important; }
       
-      .footer-right-column { align-items: center !important; }
-      .footer-links { justify-content: center !important; flex-wrap: wrap !important; gap: 1.5rem !important; }
+      /* Mobile Footer Structural Alignment Realignment */
+      .footer-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 2.5rem !important;
+      }
+      .footer-brand {
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-right-column {
+        align-items: center !important;
+        width: 100% !important;
+      }
+      .footer-links {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
+      }
     }
 
     @media (max-width: 576px) {
@@ -300,7 +341,7 @@
       .card-top p { font-size: 0.85rem; line-height: 1.4; }
       .card-mockup-wrapper { height: 190px; margin-top: 1rem; }
 
-      /* Downsize dynamic stack elements proportionally */
+      /* Downsize stack elements proportionally */
       .voices-carousel-container { gap: 0.5rem; width: 100%; padding: 0; }
       .voices-carousel-wrapper { height: 420px !important; max-width: 100%; }
       .testimonial-stack { width: 240px !important; height: 380px !important; }
@@ -310,11 +351,17 @@
       .waitlist-form { border-radius: 24px; flex-direction: column; padding: 0.75rem; background: rgba(255,255,255,0.04); width: 100%; }
       .waitlist-input { padding: 0.85rem; text-align: center; margin-bottom: 0.5rem; width: 100%; }
       .btn-submit { width: 100%; padding: 0.85rem; border-radius: 18px; }
+      
+      .footer-links {
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Fixed Navigation Bar -->
   <header class="nav-wrapper">
     <div class="nav-container">
       <a href="#home" class="logo-link">
@@ -324,18 +371,21 @@
         <a href="#home">Home</a>
         <a href="#services">Our Services</a>
         <a href="#walkthrough">How It Works</a>
-        <a href="#voices">Voices</a>
+        <a href="#voices">User Research</a>
       </nav>
       <a href="#waitlist" class="btn-nav">Join Waitlist</a>
       
+      <!-- Mobile Quick Menu Trigger Button -->
       <button class="mobile-menu-toggle" onclick="window.location.href='#waitlist'" aria-label="Join Waitlist Link">
         <i class="ti ti-user-plus" style="color: #FF6B00;"></i>
       </button>
     </div>
   </header>
 
+  <!-- Responsive Layout Protection Wrapper -->
   <div class="site-wrapper">
 
+    <!-- Hero Section -->
     <main id="home" class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -357,6 +407,7 @@
       </div>
     </main>
 
+    <!-- Services Section -->
     <section id="services" style="padding: 5rem 0 3rem 0; background: #ffffff; border-bottom: 1px solid #f0f0f0;">
       <div class="container">
         <div class="section-header reveal">
@@ -369,6 +420,7 @@
       <div class="marquee-container">
         <div class="marquee-track-left" id="serviceTrack">
           
+          <!-- WeCare Card -->
           <div class="service-card card-wecare">
             <div class="card-top">
               <span class="service-tag tag-wecare">Family Care</span>
@@ -380,6 +432,7 @@
             </div>
           </div>
 
+          <!-- FreshMart Card -->
           <div class="service-card card-freshmart">
             <div class="card-top">
               <span class="service-tag tag-freshmart">Groceries</span>
@@ -391,6 +444,7 @@
             </div>
           </div>
 
+          <!-- QuickBites Card -->
           <div class="service-card card-quickbites">
             <div class="card-top">
               <span class="service-tag tag-quickbites">Food Delivery</span>
@@ -402,6 +456,7 @@
             </div>
           </div>
 
+          <!-- PackIt Card -->
           <div class="service-card card-packit">
             <div class="card-top">
               <span class="service-tag tag-packit">Courier Transit</span>
@@ -413,6 +468,7 @@
             </div>
           </div>
 
+          <!-- TaskPal Card -->
           <div class="service-card card-taskpal">
             <div class="card-top">
               <span class="service-tag tag-taskpal">Home Utility</span>
@@ -428,6 +484,7 @@
       </div>
     </section>
 
+    <!-- Walkthrough Section -->
     <section id="walkthrough" class="walkthrough-section">
       <div class="container">
         <div class="responsive-row">
@@ -470,42 +527,43 @@
       </div>
     </section>
 
+    <!-- Voices / User Research Section -->
     <section id="voices" class="voices-section">
       <div class="container">
         <div class="responsive-row">
           
           <div class="voices-text-block reveal">
-            <span class="eyebrow">Community Voices</span>
-            <h2 class="section-title">Real stories from real users.</h2>
-            <p class="section-sub">See how individuals across communities use ANY to navigate daily service barriers and build digital accessibility.</p>
+            <span class="eyebrow">Field Research Insights</span>
+            <h2 class="section-title">Usability Testing & Feedback</h2>
+            <p class="section-sub">We interacted directly with local residents, showcasing the design prototype to learn about their daily pain points, transactional barriers, and how the ANY system could best serve their needs.</p>
           </div>
 
           <div class="voices-carousel-container reveal">
-            <button class="btn-stack-nav" onclick="rotateStackLeft()" aria-label="Previous story">
+            <button class="btn-stack-nav" onclick="rotateStackLeft()" aria-label="Previous insight">
               <i class="ti ti-arrow-left"></i>
             </button>
             
             <div class="voices-carousel-wrapper">
               <div class="testimonial-stack">
                 <div class="stack-card" id="card-1">
-                  <img src="Arya.jpeg" alt="Arya Testimonial">
+                  <img src="Nilima.jpeg" alt="Community Interview Panel 1">
                 </div>
                 <div class="stack-card" id="card-2">
-                  <img src="Jijila.jpg" alt="Jijila G Testimonial">
+                  <img src="Jijila.jpg" alt="Community Interview Panel 2">
                 </div>
                 <div class="stack-card" id="card-3">
-                  <img src="Prashob.jpg" alt="Prashob Testimonial">
+                  <img src="Prashob.jpg" alt="Community Interview Panel 3">
                 </div>
                 <div class="stack-card" id="card-4">
-                  <img src="Deepika.jpg" alt="Deepika Testimonial">
+                  <img src="Deepika.jpg" alt="Community Interview Panel 4">
                 </div>
                 <div class="stack-card" id="card-5">
-                  <img src="Nilima.jpeg" alt="Nilima Testimonial">
+                  <img src="Arya.jpeg" alt="Arya.jpeg User Feedback Card">
                 </div>
               </div>
             </div>
 
-            <button class="btn-stack-nav" onclick="rotateStackRight()" style="background: #111111; color: #ffffff; border-color: #111111;" aria-label="Next story">
+            <button class="btn-stack-nav" onclick="rotateStackRight()" style="background: #111111; color: #ffffff; border-color: #111111;" aria-label="Next insight">
               <i class="ti ti-arrow-right"></i>
             </button>
           </div>
@@ -514,6 +572,7 @@
       </div>
     </section>
 
+    <!-- Waitlist Section -->
     <section id="waitlist" class="waitlist-section">
       <div class="waitlist-container reveal">
         <h2>Join the Waitlist</h2>
@@ -528,12 +587,13 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-row">
           
           <div class="footer-brand">
-            <h2 class="footer-punchline">Because <span style="color: #111111;">ANY</span> means never facing it alone.</h2>
+            <h2 class="footer-punchline">Because <span style="color: #FF6B00;">ANY</span> means never facing it alone.</h2>
             <p>Bringing everyday community services right to your phone.</p>
           </div>
 
@@ -545,8 +605,8 @@
               <a href="#home">Home</a>
               <a href="#services">Our Services</a>
               <a href="#walkthrough">How It Works</a>
-              <a href="#voices">Voices</a>
-              <a href="#waitlist">Waitlist Queue</a>
+              <a href="#voices">User Research</a>
+              <a href="#waitlist">Waitlist</a>
             </nav>
           </div>
 
@@ -558,10 +618,16 @@
       </div>
     </footer>
 
-  </div> <div class="toast" id="successToast">
+  </div> <!-- End of .site-wrapper -->
+
+  <!-- Toast Notification Box -->
+  <div class="toast" id="successToast">
     <i class="ti ti-circle-check"></i> Thank you! You have been added to our local waitlist queue.
   </div>
 
+  <!-- ==========================================
+       CORE SITE JAVASCRIPT LOGIC
+       ========================================== -->
   <script>
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -583,7 +649,7 @@
     }
     setupMarqueeLoop('serviceTrack');
 
-    // Updated Testimonial Stack Layering Controller (supports 5 items)
+    // Testimonial Stack Layering Controller (supports 5 items)
     let currentActive = 1;
     const totalCards = 5;
 
@@ -625,7 +691,7 @@
     window.addEventListener('resize', updateStackStyles);
     document.addEventListener('DOMContentLoaded', updateStackStyles);
 
-    // Secure asynchronous Formspree submission engine
+    // Asynchronous Formspree Submission Engine with Corrected Toast Control
     async function handleWaitlistSubmit(event) {
       event.preventDefault();
       
